@@ -35,7 +35,7 @@ class TapAppmetrica(Tap):
         th.Property(
             "chunk_days",
             th.IntegerType,
-            default=30,
+            default=7,
         ),
         th.Property(
             "limit",
