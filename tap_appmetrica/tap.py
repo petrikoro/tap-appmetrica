@@ -58,3 +58,7 @@ class TapAppMetrica(Tap):
             streams.EventsStream(self),
             streams.InstallationsStream(self),
         ]
+
+
+if __name__ == "__main__":
+    TapAppMetrica.cli()
