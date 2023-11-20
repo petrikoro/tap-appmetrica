@@ -124,9 +124,7 @@ class AppMetricaStream(RESTStream):
             An item for every record in the response.
         """
         now = pendulum.now(tz=self.config.get("time_zone"))
-        replication_key_value = pendulum.parse(
-            self.get_starting_replication_key_value(context)
-        )
+        replication_key_value = pendulum.parse(self.get_starting_timestamp(context))
 
         decorated_request = self.request_decorator(self._request)
 
