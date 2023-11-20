@@ -71,7 +71,7 @@ class AppMetricaStream(RESTStream):
             An authenticator instance.
         """
         return SimpleAuthenticator(
-            self, {"Authorization": f"OAuth {self.config['api_token']}"}
+            self, {"Authorization": f"OAuth {self.config['token']}"}
         )
 
     @property

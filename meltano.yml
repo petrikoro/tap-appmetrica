@@ -17,12 +17,12 @@ plugins:
     - stream-maps
     settings:
     - name: application_id
-    - name: api_token
+    - name: token
       kind: password
     - name: start_date
     config:
       application_id: '40135'
-      start_date: '2023-11-19 00:00:00'
+      start_date: '2023-11-19T00:00:00+00:00'
     select:
     - installations.*
     - events.*

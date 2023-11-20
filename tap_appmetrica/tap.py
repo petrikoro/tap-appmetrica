@@ -20,7 +20,7 @@ class TapAppMetrica(Tap):
             required=True,
         ),
         th.Property(
-            "api_token",
+            "token",
             th.StringType,
             required=True,
             secret=True,  # Flag config as protected.
