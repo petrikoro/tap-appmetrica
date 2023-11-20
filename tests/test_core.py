@@ -4,7 +4,7 @@ import datetime
 
 from singer_sdk.testing import get_tap_test_class
 
-from tap_appmetrica.tap import TapAppmetrica
+from tap_appmetrica.tap import TapAppMetrica
 
 
 SAMPLE_CONFIG = {
@@ -14,10 +14,7 @@ SAMPLE_CONFIG = {
 
 
 # Run standard built-in tap tests from the SDK:
-TestTapAppmetrica = get_tap_test_class(
-    tap_class=TapAppmetrica,
-    config=SAMPLE_CONFIG
-)
+TestTapAppMetrica = get_tap_test_class(tap_class=TapAppMetrica, config=SAMPLE_CONFIG)
 
 
 # TODO: Create additional tests as appropriate for your tap.

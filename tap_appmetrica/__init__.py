@@ -1,1 +1,1 @@
-"""Tap for Appmetrica."""
+"""Tap for AppMetrica."""

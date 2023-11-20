@@ -1,0 +1,279 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "application_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "click_datetime": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "click_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "click_ipv6": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "click_timestamp": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "click_url_parameters": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "click_user_agent": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "profile_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "publisher_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "publisher_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "tracker_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "tracking_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "install_datetime": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "install_ipv6": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "install_receive_datetime": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "install_receive_timestamp": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "install_timestamp": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "is_reattribution": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "is_reinstallation": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "match_type": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "appmetrica_device_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "city": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "connection_type": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "country_iso_code": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "device_locale": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "device_manufacturer": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "device_model": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "device_type": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "google_aid": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "ios_ifa": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "ios_ifv": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "mcc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "mnc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "operator_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "os_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "os_version": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "windows_aid": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "app_package_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "app_version_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      }
+    }
+  }

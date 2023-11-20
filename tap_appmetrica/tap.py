@@ -1,4 +1,4 @@
-"""Appmetrica tap class."""
+"""AppMetrica tap class."""
 
 from __future__ import annotations
 
@@ -8,8 +8,8 @@ from singer_sdk import typing as th  # JSON schema typing helpers
 from tap_appmetrica import streams
 
 
-class TapAppmetrica(Tap):
-    """Appmetrica tap class."""
+class TapAppMetrica(Tap):
+    """AppMetrica tap class."""
 
     name = "tap-appmetrica"
 
@@ -20,7 +20,7 @@ class TapAppmetrica(Tap):
             required=True,
         ),
         th.Property(
-            "token",
+            "api_token",
             th.StringType,
             required=True,
             secret=True,  # Flag config as protected.
@@ -41,9 +41,14 @@ class TapAppmetrica(Tap):
             "limit",
             th.StringType,
         ),
+        th.Property(
+            "time_zone",
+            th.StringType,
+            default="UTC",
+        ),
     ).to_dict()
 
-    def discover_streams(self) -> list[streams.AppmetricaStream]:
+    def discover_streams(self) -> list[streams.AppMetricaStream]:
         """Return a list of discovered streams.
 
         Returns:
@@ -53,7 +58,3 @@ class TapAppmetrica(Tap):
             streams.EventsStream(self),
             streams.InstallationsStream(self),
         ]
-
-
-if __name__ == "__main__":
-    TapAppmetrica.cli()

@@ -2,109 +2,55 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
+from tap_appmetrica.client import AppMetricaStream
 
-from singer_sdk import typing as th  # JSON Schema typing helpers
-
-from tap_appmetrica.client import AppmetricaStream
+SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
 
-class EventsStream(AppmetricaStream):
+class EventsStream(AppMetricaStream):
+    """Stream for AppMetrica's events"""
+
     name = "events"
-    path = "/logs/v1/export/events.csv"
+    rest_method = "GET"
+    path = "/logs/v1/export/events.json"
+    records_jsonpath = "$.data[*]"
 
-    primary_keys = None
-    replication_key = "event_receive_datetime"
-
-    fields = (
-        "event_datetime",
-        "event_json",
-        "event_name",
-        "event_receive_datetime",
-        "event_receive_timestamp",
-        "event_timestamp",
-        "session_id",
+    primary_keys = [
+        "application_id",
+        "appmetrica_device_id",
         "installation_id",
-        "appmetrica_device_id",
-        "city",
-        "connection_type",
-        "country_iso_code",
-        "device_ipv6",
-        "device_locale",
-        "device_manufacturer",
-        "device_model",
-        "device_type",
-        "google_aid",
-        "ios_ifa",
-        "ios_ifv",
-        "mcc",
-        "mnc",
-        "operator_name",
-        "original_device_model",
-        "os_name",
-        "os_version",
-        "profile_id",
-        "windows_aid",
-        "app_build_number",
-        "app_package_name",
-        "app_version_name",
-        "application_id",
-    )
-
-    schema = th.PropertiesList(
-        *[th.Property(i, th.StringType) for i in fields]
-    ).to_dict()
-
-
-class InstallationsStream(AppmetricaStream):
-    name = "installations"
-    path = "/logs/v1/export/installations.csv"
-
-    primary_keys = None
-    replication_key = "install_receive_datetime"
-
-    fields = [
-        "application_id",
-        "click_datetime",
-        "click_id",
-        "click_ipv6",
-        "click_timestamp",
-        "click_url_parameters",
-        "click_user_agent",
-        "profile_id",
-        "publisher_id",
-        "publisher_name",
-        "tracker_name",
-        "tracking_id",
-        "install_datetime",
-        "install_ipv6",
-        "install_receive_datetime",
-        "install_receive_timestamp",
-        "install_timestamp",
-        "is_reattribution",
-        "is_reinstallation",
-        "match_type",
-        "appmetrica_device_id",
-        "city",
-        "connection_type",
-        "country_iso_code",
-        "device_locale",
-        "device_manufacturer",
-        "device_model",
-        "device_type",
-        "google_aid",
-        "ios_ifa",
-        "ios_ifv",
-        "mcc",
-        "mnc",
-        "operator_name",
-        "os_name",
-        "os_version",
-        "windows_aid",
-        "app_package_name",
-        "app_version_name",
+        "session_id",
+        "event_name",
+        "event_datetime",
+        "event_timestamp",
     ]
+    replication_key = "event_receive_datetime"
+    is_sorted = False
 
-    schema = th.PropertiesList(
-        *[th.Property(i, th.StringType) for i in fields]
-    ).to_dict()
+    schema_filepath = SCHEMAS_DIR / "events.json"
+
+    fields = list(json.loads(Path.read_text(schema_filepath))["properties"].keys())
+
+
+class InstallationsStream(AppMetricaStream):
+    """Stream for AppMetrica's installations"""
+
+    name = "installations"
+    rest_method = "GET"
+    path = "/logs/v1/export/installations.json"
+    records_jsonpath = "$.data[*]"
+
+    primary_keys = [
+        "application_id",
+        "appmetrica_device_id",
+        "install_datetime",
+        "install_timestamp",
+    ]
+    replication_key = "install_receive_datetime"
+    is_sorted = False
+
+    schema_filepath = SCHEMAS_DIR / "installations.json"
+
+    fields = list(json.loads(Path.read_text(schema_filepath))["properties"].keys())

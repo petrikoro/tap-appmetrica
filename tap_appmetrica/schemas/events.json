@@ -1,0 +1,230 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "event_datetime": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Date and time of the event in yyyy-mm-dd hh:mm:ss format"
+      },
+      "event_json": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Event attributes serialized into JSON"
+      },
+      "event_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Name of the event (as passed to the SDK)"
+      },
+      "event_receive_datetime": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Date and time when the install event was received on the server side. May differ from event_datetime due to network delays or if the user's device was not connected at the time of the event"
+      },
+      "event_receive_timestamp": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Time when the event was received on the server side, in Unix timestamp format. May differ fromevent_timestamp due to network delays or if the user's device was not connected at the time of the event"
+      },
+      "event_timestamp": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Time of the event in UNIX-time format"
+      },
+      "session_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "installation_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "appmetrica_device_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A unique device identifier detected by the AppMetrica service"
+      },
+      "city": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The name in English of the city where the click took place (based on device's IP address)"
+      },
+      "connection_type": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Device connection type. Possible values: wifi | cell | unknown"
+      },
+      "country_iso_code": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "ISO country code"
+      },
+      "device_ipv6": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The IP address at the time of event, in IPv6 format. For example, 2a02:6b8::40c:6676:baff:fea6:53d8, ::ffff:5.255.232.147"
+      },
+      "device_locale": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The device language"
+      },
+      "device_manufacturer": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The device manufacturer as detected by the AppMetrica service (for example, Apple or Samsung)"
+      },
+      "device_model": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The device model as detected by the AppMetrica service (for example, Galaxy S6)"
+      },
+      "device_type": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The device type detected by the AppMetrica service. Possible values: phone | tablet | unknown"
+      },
+      "google_aid": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Google AID device in the format received from the device"
+      },
+      "ios_ifa": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "IFA of the device in the format received from the device"
+      },
+      "ios_ifv": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "IFV for the app in the format received from the device"
+      },
+      "mcc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Mobile country code"
+      },
+      "mnc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Mobile network code"
+      },
+      "operator_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Name of the mobile operator"
+      },
+      "original_device_model": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Factory model of the device (for example, the following values are possible for Galaxy S8: SM-G9550, SM-G9558, and so on)"
+      },
+      "os_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Operating system on the user's device: ios | android | windows"
+      },
+      "os_version": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Version of the operating system on the user's device"
+      },
+      "profile_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "windows_aid": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Windows AID of the device in the format received from the device"
+      },
+      "app_build_number": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": ""
+      },
+      "app_package_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Package name for Android or Bundle ID for iOS (for example, ru.yandex.metro)"
+      },
+      "app_version_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Version of the app as specified by the developer"
+      },
+      "application_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Unique numeric identifier for the application in AppMetrica"
+      }
+    }
+  }
