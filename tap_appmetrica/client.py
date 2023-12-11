@@ -41,7 +41,7 @@ class AppMetricaStream(RESTStream):
             Number of max retries.
         """
 
-        return 30
+        return 120
 
     @property
     def timeout(self) -> int:
