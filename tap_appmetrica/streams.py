@@ -14,7 +14,7 @@ class EventsStream(AppMetricaStream):
 
     name = "events"
     rest_method = "GET"
-    path = "/logs/v1/export/events.json"
+    path = "/logs/v1/export/events.csv"
     records_jsonpath = "$.data[*]"
 
     primary_keys = [
@@ -39,7 +39,7 @@ class InstallationsStream(AppMetricaStream):
 
     name = "installations"
     rest_method = "GET"
-    path = "/logs/v1/export/installations.json"
+    path = "/logs/v1/export/installations.csv"
     records_jsonpath = "$.data[*]"
 
     primary_keys = [
