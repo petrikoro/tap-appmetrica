@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import csv
 import backoff
 import pendulum
 from pathlib import Path
@@ -16,6 +17,7 @@ from singer_sdk.authenticators import SimpleAuthenticator
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
+csv.field_size_limit(sys.maxsize)
 
 class AppMetricaStream(RESTStream):
     """AppMetricaStream stream class."""
@@ -162,4 +164,5 @@ class AppMetricaStream(RESTStream):
             Each record from the source.
         """
 
-        yield from extract_jsonpath(self.records_jsonpath, input=response.json())
+        reader = csv.DictReader(response.iter_lines(decode_unicode=True))
+        yield from reader
