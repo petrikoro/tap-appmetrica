@@ -14,7 +14,7 @@ class EventsStream(AppMetricaStream):
 
     name = "events"
     rest_method = "GET"
-    path = "/logs/v1/export/events.csv"
+    path = "/logs/v1/export/events.json"
     records_jsonpath = "$.data[*]"
 
     primary_keys = [
