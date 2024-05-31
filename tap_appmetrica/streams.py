@@ -23,6 +23,7 @@ class EventsStream(AppMetricaStream):
         "installation_id",
         "session_id",
         "event_name",
+        "event_json",
         "event_datetime",
         "event_timestamp",
     ]
