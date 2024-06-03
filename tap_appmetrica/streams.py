@@ -17,16 +17,6 @@ class EventsStream(AppMetricaStream):
     path = "/logs/v1/export/events.json"
     records_jsonpath = "$.data[*]"
 
-    primary_keys = [
-        "application_id",
-        "appmetrica_device_id",
-        "installation_id",
-        "session_id",
-        "event_name",
-        "event_json",
-        "event_datetime",
-        "event_timestamp",
-    ]
     replication_key = "event_receive_datetime"
     is_sorted = False
 
